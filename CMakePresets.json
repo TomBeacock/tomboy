@@ -13,10 +13,11 @@
             "binaryDir": "${sourceDir}/build/debug",
             "cacheVariables": {
                 "CMAKE_BUILD_TYPE": "Debug",
-                "CMAKE_EXPORT_COMPILE_COMMANDS": "TRUE",
-                "SDL_STATIC": "TRUE",
-                "SDL_SHARED": "FALSE",
-                "SDL_TESTS": "FALSE"
+                "CMAKE_EXPORT_COMPILE_COMMANDS": "ON",
+                "SDL_STATIC": "ON",
+                "SDL_SHARED": "OFF",
+                "SDL_TEST": "OFF",
+                "SDL_TESTS": "OFF"
             }
         }
     ],
