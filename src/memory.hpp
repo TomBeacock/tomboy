@@ -4,13 +4,10 @@
 
 #include <array>
 
-namespace Tomboy {
-constexpr u16 memory_size = 0xFFFF;
-constexpr u16 io_start = 0xFF00;
-
+namespace tomboy {
 class Memory {
   public:
-    Memory();
+    Memory() = default;
 
     [[nodiscard]] auto read(u16 address) const -> u8;
     [[nodiscard]] auto read_io(u8 offset) const -> u8;
@@ -19,26 +16,26 @@ class Memory {
     auto write_io(u8 offset, u8 value) -> void;
 
   private:
-    std::array<u8, memory_size> memory;
+    std::array<u8, 0xFFFF> memory_;
 };
 
 inline auto Memory::read(u16 address) const -> u8
 {
-    return memory.at(address);
+    return memory_.at(address);
 }
 
 inline auto Memory::read_io(u8 offset) const -> u8
 {
-    return read(io_start + offset);
+    return read(0xFF00 + offset);
 }
 
 inline auto Memory::write(u16 address, u8 value) -> void
 {
-    memory.at(address) = value;
+    memory_.at(address) = value;
 }
 
 inline auto Memory::write_io(u8 offset, u8 value) -> void
 {
-    write(io_start + offset, value);
+    write(0xFF00 + offset, value);
 }
-} // namespace Tomboy
+} // namespace tomboy

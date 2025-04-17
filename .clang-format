@@ -7,6 +7,7 @@ AccessModifierOffset: -2
 AlignAfterOpenBracket: DontAlign
 AlignArrayOfStructures: Right
 AllowShortFunctionsOnASingleLine: None
+AllowShortCaseLabelsOnASingleLine: true
 BreakBeforeBraces: Stroustrup
 BreakTemplateDeclarations: Yes
 ConstructorInitializerIndentWidth: 2
@@ -25,4 +26,5 @@ IntegerLiteralSeparator:
   DecimalMinDigits: 5
   Hex: 4
   HexMinDigits: 9
+PackConstructorInitializers: Never
 QualifierAlignment: Left
